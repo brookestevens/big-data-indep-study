@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>ATLS 4900</title>
+  <meta name="description" content="Big data stuff">
+  <meta name="author" content="Brooke">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js" crossorigin="anonymous"></script>
+  <!-- <script src="./assets/OrbitControls.js"></script> -->
+  <script type="module" src="./assets/AudioAnalyser.js"></script>
+  <script src="./assets/EffectComposer.js"></script>
+  <script src="./assets/RenderPass.js"></script>
+  <script src="/assets/ShaderPass.js"></script>
+  <script src="/assets/CopyShader.js"></script>
+  <script src="/assets/LuminosityHighPassShader.js"></script>
+  <script src="/assets/UnrealBloomPass.js"></script>
+  <style>
+    body{
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #form-wrapper{
+      position: absolute;
+      left: 3%;
+      top: 3%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="form-wrapper">
+  <h2 id="song-title"> Music Vizualizer</h2>
+  <form id="song-form">
+    <label for="song-input"> Choose a Song (.mp3) to Upload</label>
+    <br />
+    <input type="file" id="song-input" name="song-file" accept=".mp3, .m4a" />
+    <button type="submit"> Upload and Play </button>
+  </form>
+  </div>
+  <!-- Three.js app renders here -->
+</body>
+<script src = "./js/music-viz.js" ></script>
+</html>

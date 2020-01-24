@@ -1,0 +1,24 @@
+{
+  "name": "big-data-viz",
+  "version": "1.0.0",
+  "description": "Big data vizualizers for ATLS 4900",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config server.js",
+    "start": "node server.js",
+    "dev-py": "cd public && python -m SimpleHTTPServer 3000"
+  },
+  "author": "Brooke",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "repositories":{
+    "type": "git",
+    "url": "https://github.com/brookestevens/big-data-indep-study"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
