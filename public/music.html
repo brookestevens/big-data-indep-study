@@ -7,8 +7,11 @@
   <meta name="description" content="Big data stuff">
   <meta name="author" content="Brooke">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js" crossorigin="anonymous"></script>
-  <!-- <script src="./assets/OrbitControls.js"></script> -->
-  <script type="module" src="./assets/AudioAnalyser.js"></script>
+  <script src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js' ></script>
+  <script src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.js'></script>
+  <script src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.js'></script>
+  <script src="/assets/dat.gui.min.js"></script>
+  <script src="./assets/OrbitControls.js"></script>
   <script src="./assets/EffectComposer.js"></script>
   <script src="./assets/RenderPass.js"></script>
   <script src="/assets/ShaderPass.js"></script>
@@ -18,9 +21,17 @@
   <style>
     body{
       margin: 0;
+      width: 100vw;
+      height: 100vh;
       background-color: black;
       color: white;
       font-family: Arial, Helvetica, sans-serif;
+    }
+    h2{
+      margin-bottom: .5em;
+    }
+    #defaultCanvas0{
+      display: none;
     }
     #form-wrapper{
       position: absolute;
@@ -34,13 +45,53 @@
   <div id="form-wrapper">
   <h2 id="song-title"> Music Vizualizer</h2>
   <form id="song-form">
-    <label for="song-input"> Choose a Song (.mp3) to Upload</label>
+    <label for="song-input"> Press 'p' to start/pause song </label>
     <br />
     <input type="file" id="song-input" name="song-file" accept=".mp3, .m4a" />
-    <button type="submit"> Upload and Play </button>
   </form>
   </div>
   <!-- Three.js app renders here -->
 </body>
+<script>
+    // Using p5 for beat detection
+    var fft, peak, amplitude, spectrum = null;
+    var song = null, level;
+
+    //Event Listener for the input
+    document.getElementById('song-input').addEventListener('change', e => {
+      song = loadSound(URL.createObjectURL(e.target.files[0]));
+      document.getElementById('song-title').innerHTML = e.target.files[0].name;
+    });
+
+    //Event listener for key down
+    window.addEventListener("keydown", event => {
+      if (event.keyCode === 80 && !song.isPlaying()) {
+        song.play();
+      }
+      else if(song.isPlaying()){
+        song.pause();
+      }
+      else {
+        song.loop();
+      }
+    });
+
+    function setup(){
+      fft = new p5.FFT(.8,512); //fast fourier transform
+      peak = new p5.PeakDetect()
+      amplitude = new p5.Amplitude();
+      //beat detected
+      peak.onPeak(() => {
+        //change colors in three
+        beat = true;
+      });
+    }
+
+    function draw(){
+      spectrum = fft.analyze(); //frequencies
+      level = amplitude.getLevel();
+      peak.update(fft);
+    }
+</script>
 <script src = "./js/music-viz.js" ></script>
 </html>
