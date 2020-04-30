@@ -1,0 +1,41 @@
+Research and notes:
+
+HG Build:
+
+https://bitesizebio.com/38335/get-to-know-your-reference-genome-grch37-vs-grch38/
+
+Chord Diagrams and D3:
+
+https://medium.com/@Marianattestad/a-treatise-on-making-circos-plots-from-genomic-data-7ff496849e0
+https://jarrettmeyer.com/2019/04/12/d3-chord-diagrams
+https://flowingdata.com/2012/08/02/how-to-make-an-interactive-network-visualization/
+
+DNA analysis:
+
+https://blog.nimahejazi.org/posts/snooping-thru-my-snps-1/
+https://www.reddit.com/r/dataisbeautiful/comments/bsnafd/my_23andme_genetic_relatives_as_a_network_graphoc/
+https://github.com/harrison-h/23andMe-Common-Relatives-Scraper
+
+Other:
+
+https://www.gedmatch.com/register.php
+
+Sequence Endpoint:
+https://github.com/23andMe/seqseek
+https://api.genome.ucsc.edu/getData/sequence?genome=hg19;chrom=chr17;start=141224;end=141244;
+- chromosome
+- start
+- stop
+
+https://www.connecteddna.com/gallery.html
+https://www.connecteddna.com/store/p22/23andme.html
+https://www.reddit.com/r/23andme/comments/alaiqc/23andme_dna_relatives_visualized/
+
+https://genie1.com.au/tips-for-using-gedmatch/
+https://www.zalewskifamily.net/tag/gedmatch/
+
+web scraping
+https://github.com/harrison-h/23andMe-Common-Relatives-Scraper/blob/master/23andMe%20Common%20Relatives%20Scraper.py
+https://github.com/freeseek/getmydnamatches/blob/master/getmy23andme.py
+https://www.reddit.com/r/23andme/comments/81mzi9/i_wrote_a_python_script_for_pulling_the_common/
+

@@ -3,8 +3,8 @@
 /node_modules
 
 #ignore .env files
-
 .env
 
 #ignore notes
 code-snippets.js
+notes.txt

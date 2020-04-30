@@ -129,7 +129,7 @@ function getParticleSystem(){
     var particleMaterial = new t.PointsMaterial({
         color: 'hsl(200 100%, 50%)', 
         size: 3,
-        map: new t.TextureLoader().load('./assets/particle.jpg'),
+        map: new t.TextureLoader().load('./public/assets/particle.jpg'),
         transparent: true,
         blending: t.AdditiveBlending,
         depthWrite: false
